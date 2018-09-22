@@ -8,7 +8,13 @@ const toWords = document.getElementById('toWords');
 
 toSecret.addEventListener('click', (e) => {
     let wordInput = document.getElementById('wordInput').value;
-    printToDom(wordInput, 'codeMade')
+    const wordArray = wordInput.split('');
+    const codeArray = wordArray.forEach(element => {
+        const newCode = element.charCodeAt();
+        return newCode
+    });
+    
+    printToDom(codeArray, 'codeMade')
 })
 
 toWords.addEventListener('click', (e) => {
